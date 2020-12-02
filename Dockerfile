@@ -48,8 +48,8 @@ ENV RELEASE_TYPE 'OFFICIAL'
 ENV OTA_URL 'https://ota.securesession.live/'
 
 # User identity
-ENV USER_NAME 'LineageOS Buildbot'
-ENV USER_MAIL 'lineageos-buildbot@docker.host'
+ENV USER_NAME 'SecureSession Buildbot'
+ENV USER_MAIL 'securesession-buildbot@docker.host'
 
 # Include proprietary files, downloaded automatically from github.com/TheMuppets/ and gitlab.com/the-muppets/
 # Only some branches are supported
@@ -85,7 +85,7 @@ ENV CUSTOM_PACKAGES 'GmsCore GsfProxy FakeStore MozillaNlpBackend NominatimNlpBa
 ENV SIGN_BUILDS true
 
 # When SIGN_BUILDS = true but no keys have been provided, generate a new set with this subject
-ENV KEYS_SUBJECT '/C=CA/ST=BC/L=Pacific View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
+ENV KEYS_SUBJECT '/C=CA/ST=BC/L=BC/O=SecureSession/OU=SecureSession/CN=SecureSession/emailAddress=dev@securesession.live'
 
 # Move the resulting zips to $ZIP_DIR/$codename instead of $ZIP_DIR/
 ENV ZIP_SUBDIR true
