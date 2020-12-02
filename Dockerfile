@@ -34,18 +34,18 @@ ENV CCACHE_EXEC /usr/bin/ccache
 
 # Environment for the LineageOS branches name
 # See https://github.com/LineageOS/android_vendor_cm/branches for possible options
-ENV BRANCH_NAME 'lineage-16.0'
+ENV BRANCH_NAME 'lineage-17.1'
 
 # Environment for the device list (separate by comma if more than one)
 # eg. DEVICE_LIST=hammerhead,bullhead,angler
-ENV DEVICE_LIST ''
+ENV DEVICE_LIST 'flame'
 
 # Release type string
-ENV RELEASE_TYPE 'UNOFFICIAL'
+ENV RELEASE_TYPE 'OFFICIAL'
 
 # OTA URL that will be used inside CMUpdater
 # Use this in combination with LineageOTA to make sure your device can auto-update itself from this buildbot
-ENV OTA_URL ''
+ENV OTA_URL 'https://ota.securesession.live/'
 
 # User identity
 ENV USER_NAME 'LineageOS Buildbot'
@@ -73,19 +73,19 @@ ENV CRONTAB_TIME 'now'
 ENV CLEAN_AFTER_BUILD true
 
 # Provide root capabilities builtin inside the ROM (see http://lineageos.org/Update-and-Build-Prep/)
-ENV WITH_SU false
+ENV WITH_SU true
 
 # Provide a default JACK configuration in order to avoid out-of-memory issues
 ENV ANDROID_JACK_VM_ARGS "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 
 # Custom packages to be installed
-ENV CUSTOM_PACKAGES ''
+ENV CUSTOM_PACKAGES 'GmsCore GsfProxy FakeStore MozillaNlpBackend NominatimNlpBackend com.google.android.maps.jar FDroid FDroidPrivilegedExtension'
 
 # Sign the builds with the keys in $KEYS_DIR
-ENV SIGN_BUILDS false
+ENV SIGN_BUILDS true
 
 # When SIGN_BUILDS = true but no keys have been provided, generate a new set with this subject
-ENV KEYS_SUBJECT '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
+ENV KEYS_SUBJECT '/C=CA/ST=BC/L=Pacific View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
 
 # Move the resulting zips to $ZIP_DIR/$codename instead of $ZIP_DIR/
 ENV ZIP_SUBDIR true
@@ -102,7 +102,7 @@ ENV LOGS_SUBDIR true
 # restricted patch and embedding the apps that requires it as system privileged
 # apps is a much secure option. See the README.md ("Custom mode") for an
 # example.
-ENV SIGNATURE_SPOOFING "no"
+ENV SIGNATURE_SPOOFING "restricted"
 
 # Delete old zips in $ZIP_DIR, keep only the N latest one (0 to disable)
 ENV DELETE_OLD_ZIPS 0
