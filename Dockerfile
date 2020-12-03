@@ -41,7 +41,7 @@ ENV BRANCH_NAME 'lineage-17.1'
 ENV DEVICE_LIST 'flame'
 
 # Release type string
-ENV RELEASE_TYPE 'OFFICIAL'
+ENV RELEASE_TYPE 'UNOFFICIAL'
 
 # OTA URL that will be used inside CMUpdater
 # Use this in combination with LineageOTA to make sure your device can auto-update itself from this buildbot
@@ -73,7 +73,7 @@ ENV CRONTAB_TIME 'now'
 ENV CLEAN_AFTER_BUILD true
 
 # Provide root capabilities builtin inside the ROM (see http://lineageos.org/Update-and-Build-Prep/)
-ENV WITH_SU true
+ENV WITH_SU false
 
 # Provide a default JACK configuration in order to avoid out-of-memory issues
 ENV ANDROID_JACK_VM_ARGS "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
